@@ -9,7 +9,8 @@ BuildParameters.SetParameters(
     title: "Cake.Issues.PullRequests.Tfs",
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Issues.PullRequests.Tfs",
-    appVeyorAccountName: "cakecontrib");
+    appVeyorAccountName: "cakecontrib",
+    shouldRunCodecov: false);
 
 BuildParameters.PrintParameters(Context);
 
