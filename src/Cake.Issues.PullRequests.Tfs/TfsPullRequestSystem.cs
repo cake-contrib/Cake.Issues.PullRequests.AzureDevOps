@@ -268,13 +268,15 @@
                 {
                     var changeTrackingId =
                         this.TryGetCodeFlowChangeTrackingId(changes, issue.AffectedFileRelativePath);
-                    if (changeTrackingId < 0)
+                    if (changeTrackingId >= 0)
                     {
-                        // Don't post comment if we couldn't determine the change.
+                        AddCodeFlowProperties(issue, iterationId, changeTrackingId, properties);
+                    }
+                    else if (this.HasCapability<ISupportFilteringByModifiedFiles>())
+                    {
+                        // Don't post comment if we couldn't determine the change and we filtered for modified files.
                         return false;
                     }
-
-                    AddCodeFlowProperties(issue, iterationId, changeTrackingId, properties);
                 }
                 else
                 {
@@ -351,9 +353,14 @@
 
             if (change.Count == 0)
             {
-                this.Log.Error(
-                    "Cannot post a comment for the file {0} because no changes on the pull request server could be found.",
-                    path);
+                if (this.HasCapability<ISupportFilteringByModifiedFiles>())
+                {
+                    // Log error if we're filtering by modified as this should not happen in this case.
+                    this.Log.Error(
+                        "Cannot post a comment for the file {0} because no changes on the pull request server could be found.",
+                        path);
+                }
+
                 return -1;
             }
 

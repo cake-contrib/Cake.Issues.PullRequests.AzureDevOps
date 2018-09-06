@@ -66,6 +66,8 @@
         /// <summary>
         /// Gets or sets a value indicating whether pull request system should filter to issues affecting
         /// files changed in the pull request.
+        /// If filtering is disabled issues not related to files changed in the pull request will be
+        /// posted as normal comments.
         /// Default value is <c>true</c>.
         /// </summary>
         public bool FilterModifiedFiles { get; set; } = true;
