@@ -1,7 +1,7 @@
-# TFS / VSTS support for Cake Issues Addin
+# TFS / Azure DevOps support for Cake Issues Addin
 
 This addin for the Cake Build Automation System allows you to write issues found using any code
-analyzer or linter to Team Foundation Server or Visual Studio Team Services pull requests using
+analyzer or linter to Team Foundation Server or Azure DevOps pull requests using
 the [Cake Issues addin](https://github.com/cake-contrib/Cake.Issues).
 
 For more information about this add-in see the [Cake.Issues website](https://cake-contrib.github.io/Cake.Issues.Website)
