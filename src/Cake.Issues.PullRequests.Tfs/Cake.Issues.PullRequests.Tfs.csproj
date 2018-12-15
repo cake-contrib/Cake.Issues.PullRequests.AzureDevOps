@@ -50,7 +50,7 @@
       <Version>2.6.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.TeamFoundationServer.Client">
-      <Version>15.112.1</Version>
+      <Version>15.131.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Services.InteractiveClient">
       <Version>15.112.1</Version>
