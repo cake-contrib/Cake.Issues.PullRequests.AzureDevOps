@@ -38,7 +38,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Cake.Core" Version="0.28.0" />
-    <PackageReference Include="Cake.Issues" Version="0.6.0" />
+    <PackageReference Include="Cake.Issues" Version="0.6.2" />
     <PackageReference Include="Cake.Issues.PullRequests" Version="0.6.0" />
     <PackageReference Include="Cake.Tfs">
       <Version>0.2.4</Version>
