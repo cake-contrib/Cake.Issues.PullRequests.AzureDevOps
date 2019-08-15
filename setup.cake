@@ -10,6 +10,7 @@ BuildParameters.SetParameters(
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Issues.PullRequests.Tfs",
     appVeyorAccountName: "cakecontrib",
+    shouldGenerateDocumentation: false,
     shouldRunGitVersion: true,
     shouldRunCodecov: false,
     shouldRunDotNetCorePack: true);
