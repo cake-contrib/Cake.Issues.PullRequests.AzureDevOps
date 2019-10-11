@@ -6,9 +6,9 @@ BuildParameters.SetParameters(
     context: Context, 
     buildSystem: BuildSystem,
     sourceDirectoryPath: "./src",
-    title: "Cake.Issues.PullRequests.Tfs",
+    title: "Cake.Issues.PullRequests.AzureDevOps",
     repositoryOwner: "cake-contrib",
-    repositoryName: "Cake.Issues.PullRequests.Tfs",
+    repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
     shouldGenerateDocumentation: false,
     shouldRunGitVersion: true,
@@ -19,8 +19,8 @@ BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(
     context: Context,
-    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Issues.PullRequests.Tfs.Tests/Capabilities/*.cs" },
-    testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[Cake.Issues]* -[Cake.Issues.Testing]* -[Cake.Issues.PullRequests]* -[Cake.Tfs]* -[Shouldly]*",
+    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Issues.PullRequests.AzureDevOps.Tests/Capabilities/*.cs" },
+    testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Testing]* -[*.Tests]* -[Cake.Issues]* -[Cake.Issues.Testing]* -[Cake.Issues.PullRequests]* -[Cake.AzureDevOps]* -[Shouldly]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
