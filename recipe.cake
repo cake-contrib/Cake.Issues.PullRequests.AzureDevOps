@@ -11,6 +11,7 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
     shouldGenerateDocumentation: false,
+    shouldPublishMyGet: false,
     shouldRunGitVersion: true,
     shouldRunCodecov: false,
     shouldRunDotNetCorePack: true);
