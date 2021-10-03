@@ -9,61 +9,19 @@ updates:
   ignore:
   - dependency-name: Cake.AzureDevOps
     versions:
-    - "> 0.4.0, < 0.5"
-  - dependency-name: Cake.AzureDevOps
-    versions:
-    - "> 0.5.0, < 0.6"
+    - "> 1.0.0, < 2"
   - dependency-name: Cake.Core
     versions:
-    - ">= 0.34.a, < 0.35"
-  - dependency-name: Cake.Core
-    versions:
-    - ">= 0.35.a, < 0.36"
-  - dependency-name: Cake.Core
-    versions:
-    - ">= 0.36.a, < 0.37"
-  - dependency-name: Cake.Core
-    versions:
-    - ">= 0.37.a, < 0.38"
-  - dependency-name: Cake.Core
-    versions:
-    - ">= 0.38.a, < 0.39"
-  - dependency-name: Cake.Core
+    - "> 1.0.0, < 2"
+  - dependency-name: Cake.Testing
     versions:
     - "> 1.0.0, < 2"
   - dependency-name: Cake.Issues
     versions:
-    - "> 0.9.0, < 0.10"
-  - dependency-name: Cake.Issues.PullRequests
-    versions:
-    - "> 0.9.0, < 0.10"
+    - "> 1.0.0, < 2"
   - dependency-name: Cake.Issues.Testing
     versions:
-    - "> 0.9.0, < 0.10"
-  - dependency-name: Cake.Testing
-    versions:
-    - ">= 0.34.a, < 0.35"
-  - dependency-name: Cake.Testing
-    versions:
-    - ">= 0.35.a, < 0.36"
-  - dependency-name: Cake.Testing
-    versions:
-    - ">= 0.36.a, < 0.37"
-  - dependency-name: Cake.Testing
-    versions:
-    - ">= 0.37.a, < 0.38"
-  - dependency-name: Cake.Testing
-    versions:
-    - ">= 0.38.a, < 0.39"
-  - dependency-name: Cake.Testing
+    - "> 1.0.0, < 2"
+  - dependency-name: Cake.Issues.PullRequests
     versions:
     - "> 1.0.0, < 2"
-  - dependency-name: Cake.Tfs
-    versions:
-    - ">= 0.2.7.a, < 0.2.8"
-  - dependency-name: Cake.Tfs
-    versions:
-    - ">= 0.3.2.a, < 0.3.3"
-  - dependency-name: Cake.Testing
-    versions:
-    - 1.0.0
