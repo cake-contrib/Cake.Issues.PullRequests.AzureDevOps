@@ -14,13 +14,10 @@ jobs:
   pool:
     vmImage: 'windows-2022'
   steps:
-  - task: UseDotNet@2
-    inputs:
-      version: '2.1.x'
   - powershell: |
       $ENV:CAKE_SKIP_GITVERSION=([string]::IsNullOrEmpty($ENV:SYSTEM_PULLREQUEST_PULLREQUESTID) -eq $False).ToString()
       .\build.ps1
-      exit $LASTEXITCODE 
+      exit $LASTEXITCODE
     displayName: 'Cake Build'
 
 - job: macOS
@@ -36,9 +33,6 @@ jobs:
   - task: UseDotNet@2
     inputs:
       version: '3.x'
-  - task: UseDotNet@2
-    inputs:
-      version: '2.1.x'
   - bash: |
       ./build.sh
     displayName: 'Cake Build'
@@ -56,12 +50,6 @@ jobs:
   - task: UseDotNet@2
     inputs:
       version: '3.x'
-  - task: UseDotNet@2
-    inputs:
-      version: '3.x'
-  - task: UseDotNet@2
-    inputs:
-      version: '2.1.x'
   - bash: |
       ./build.sh --verbosity=diagnostic
     displayName: 'Cake Build'
