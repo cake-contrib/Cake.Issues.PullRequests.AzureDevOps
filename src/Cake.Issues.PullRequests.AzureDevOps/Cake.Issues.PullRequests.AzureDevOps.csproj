@@ -48,7 +48,7 @@ See the Project Site for an overview of the whole ecosystem of addins for workin
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cake.Core" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Cake.Core" Version="2.1.0" PrivateAssets="All" />
     <PackageReference Include="Cake.Issues" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="Cake.Issues.PullRequests" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="Cake.AzureDevOps" Version="1.0.0" PrivateAssets="All" />
