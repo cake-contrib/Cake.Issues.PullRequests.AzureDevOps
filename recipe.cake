@@ -30,4 +30,7 @@ ToolSettings.SetToolPreprocessorDirectives(
     reSharperTools: "#tool nuget:?package=JetBrains.ReSharper.CommandLineTools&version=2021.3.1",
     gitVersionGlobalTool: "#tool dotnet:?package=GitVersion.Tool&version=5.8.1");
 
+// Disable Upload-Coveralls-Report task since it fails to install the tool on AppVeyor
+BuildParameters.Tasks.UploadCoverallsReportTask.WithCriteria(() => false);
+
 Build.RunDotNetCore();
