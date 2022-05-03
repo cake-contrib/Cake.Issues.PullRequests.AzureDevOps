@@ -7,13 +7,13 @@ updates:
     time: "04:00"
   open-pull-requests-limit: 10
   ignore:
-  - dependency-name: Cake.AzureDevOps
-    versions:
-    - "> 1.0.0, < 2"
   - dependency-name: Cake.Core
     versions:
-    - "> 1.0.0, < 2"
+    - "(,3.0)"
   - dependency-name: Cake.Testing
+    versions:
+    - "(,3.0)"
+  - dependency-name: Cake.AzureDevOps
     versions:
     - "> 1.0.0, < 2"
   - dependency-name: Cake.Issues
