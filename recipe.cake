@@ -14,9 +14,8 @@ BuildParameters.SetParameters(
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
+    shouldRunCoveralls: false, // Disabled because it's currently failing
     shouldGenerateDocumentation: false,
-    shouldCalculateVersion: true,
-    shouldRunCodecov: false,
     shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
