@@ -15,7 +15,7 @@ updates:
     - "(,3.0)"
   - dependency-name: Cake.AzureDevOps
     versions:
-    - "> 1.0.0, < 2"
+    - "(,3.0)"
   - dependency-name: Cake.Issues
     versions:
     - "> 1.0.0, < 2"
