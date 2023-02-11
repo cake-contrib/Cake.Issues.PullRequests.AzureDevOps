@@ -50,7 +50,7 @@ jobs:
 
 - job: Ubuntu
   pool:
-    vmImage: 'ubuntu-18.04'
+    vmImage: 'ubuntu-20.04'
   steps:
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
