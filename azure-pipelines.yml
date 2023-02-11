@@ -32,7 +32,7 @@ jobs:
 
 - job: macOS
   pool:
-    vmImage: 'macOS-10.15'
+    vmImage: 'macOS-11'
   steps:
   # .NET 5 required for GitVersion
   - task: UseDotNet@2
