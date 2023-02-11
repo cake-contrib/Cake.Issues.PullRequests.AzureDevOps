@@ -8,20 +8,14 @@ updates:
   open-pull-requests-limit: 10
   ignore:
   - dependency-name: Cake.Core
-    versions:
-    - "(,3.0)"
+    update-types: ["version-update:semver-minor"]
   - dependency-name: Cake.Testing
-    versions:
-    - "(,3.0)"
+    update-types: ["version-update:semver-minor"]
   - dependency-name: Cake.AzureDevOps
-    versions:
-    - "(,3.0)"
+    update-types: ["version-update:semver-minor"]
   - dependency-name: Cake.Issues
-    versions:
-    - "> 1.0.0, < 2"
+    update-types: ["version-update:semver-minor"]
   - dependency-name: Cake.Issues.Testing
-    versions:
-    - "> 1.0.0, < 2"
+    update-types: ["version-update:semver-minor"]
   - dependency-name: Cake.Issues.PullRequests
-    versions:
-    - "> 1.0.0, < 2"
+    update-types: ["version-update:semver-minor"]
