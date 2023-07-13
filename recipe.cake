@@ -1,4 +1,8 @@
-#load nuget:?package=Cake.Recipe&version=2.2.1
+#load nuget:?package=Cake.Recipe&version=3.0.0
+
+//*************************************************************************************************
+// Settings
+//*************************************************************************************************
 
 Environment.SetVariableNames();
 
@@ -10,27 +14,37 @@ BuildParameters.SetParameters(
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
+    shouldRunCoveralls: false, // Disabled because it's currently failing
     shouldGenerateDocumentation: false,
-    shouldCalculateVersion: true,
-    shouldRunDupFinder: false, // dupFinder is missing in 2021.3.0-eap
-    shouldRunCodecov: false,
     shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
 
 ToolSettings.SetToolSettings(
     context: Context,
-    dupFinderExcludePattern: new string[] { BuildParameters.RootDirectoryPath + "/src/Cake.Issues.PullRequests.AzureDevOps.Tests/Capabilities/*.cs" },
     testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Common]* -[Cake.Testing]* -[*.Tests]* -[Cake.Issues]* -[Cake.Issues.Testing]* -[Cake.Issues.PullRequests]* -[Cake.AzureDevOps]* -[Shouldly]* -[DiffEngine]* -[EmptyFiles]*",
     testCoverageExcludeByAttribute: "*.ExcludeFromCodeCoverage*",
     testCoverageExcludeByFile: "*/*Designer.cs;*/*.g.cs;*/*.g.i.cs");
 
-// Workaround until https://github.com/cake-contrib/Cake.Recipe/issues/862 has been fixed in Cake.Recipe
-ToolSettings.SetToolPreprocessorDirectives(
-    reSharperTools: "#tool nuget:?package=JetBrains.ReSharper.CommandLineTools&version=2021.3.1",
-    gitVersionGlobalTool: "#tool dotnet:?package=GitVersion.Tool&version=5.8.1");
+//*************************************************************************************************
+// Custom tasks
+//*************************************************************************************************
 
-// Disable Upload-Coveralls-Report task since it fails to install the tool on AppVeyor
-BuildParameters.Tasks.UploadCoverallsReportTask.WithCriteria(() => false);
+Task("BreakBuildOnIssues")
+    .Description("Breaks build if any issues in the code are found.")
+    .Does<IssuesData>((data) =>
+{
+    if (data.Issues.Any())
+    {
+        throw new Exception("Issues found in code.");
+    }
+});
+
+IssuesBuildTasks.IssuesTask
+    .IsDependentOn("BreakBuildOnIssues");
+
+//*************************************************************************************************
+// Execution
+//*************************************************************************************************
 
 Build.RunDotNetCore();
