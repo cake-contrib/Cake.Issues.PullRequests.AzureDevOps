@@ -15,6 +15,7 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
     shouldRunCoveralls: false, // Disabled because it's currently failing
+    shouldPostToGitter: false, // Disabled because it's currently failing
     shouldGenerateDocumentation: false,
     shouldRunDotNetCorePack: true);
 
