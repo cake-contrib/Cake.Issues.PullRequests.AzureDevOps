@@ -21,6 +21,9 @@ BuildParameters.SetParameters(
 
 BuildParameters.PrintParameters(Context);
 
+ToolSettings.SetToolPreprocessorDirectives(
+    reSharperTools: "#tool nuget:?package=JetBrains.ReSharper.CommandLineTools&version=2023.3.0");
+
 ToolSettings.SetToolSettings(
     context: Context,
     testCoverageFilter: "+[*]* -[xunit.*]* -[Cake.Core]* -[Cake.Common]* -[Cake.Testing]* -[*.Tests]* -[Cake.Issues]* -[Cake.Issues.Testing]* -[Cake.Issues.PullRequests]* -[Cake.AzureDevOps]* -[Shouldly]* -[DiffEngine]* -[EmptyFiles]*",
