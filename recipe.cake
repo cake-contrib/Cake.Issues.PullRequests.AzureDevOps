@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Recipe&version=3.0.0
+#load nuget:?package=Cake.Recipe&version=3.1.1
 
 //*************************************************************************************************
 // Settings
@@ -15,10 +15,14 @@ BuildParameters.SetParameters(
     repositoryName: "Cake.Issues.PullRequests.AzureDevOps",
     appVeyorAccountName: "cakecontrib",
     shouldRunCoveralls: false, // Disabled because it's currently failing
+    shouldPostToGitter: false, // Disabled because it's currently failing
     shouldGenerateDocumentation: false,
     shouldRunDotNetCorePack: true);
 
 BuildParameters.PrintParameters(Context);
+
+ToolSettings.SetToolPreprocessorDirectives(
+    reSharperTools: "#tool nuget:?package=JetBrains.ReSharper.CommandLineTools&version=2023.3.0");
 
 ToolSettings.SetToolSettings(
     context: Context,
